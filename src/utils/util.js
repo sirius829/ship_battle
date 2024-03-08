@@ -12,17 +12,15 @@ export function generateShips() {
     let shipInfos = [];
     let positions = [];
     for (let i = 0; i < BATTLE_SHIP_COUNT; i++) {
-        const battleship = generateShip('Battleship', [...positions]);
+        const battleship = generateShip('Battleship', positions);
         shipInfos.push(battleship);
         positions = [...positions, ...battleship.positions];
     }
-    console.log(positions);
     for (let i = 0; i < DESTROYER_COUNT; i++) {
-        const destroyer = generateShip('Destroyer', [...positions]);
+        const destroyer = generateShip('Destroyer', positions);
         shipInfos.push(destroyer);
         positions = [...positions, ...destroyer.positions];
     }
-    console.log(positions);
     return shipInfos;
 }
 
