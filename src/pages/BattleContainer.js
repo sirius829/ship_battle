@@ -9,14 +9,15 @@ const BattleContainer = () => {
     const [step, setStep] = useState(0);
     const [isFinish, setFinish] = useState(false);
     const [ships, setShips] = useState();
-    
     useEffect(() => {
         setShips(generateShips());
     }, []);
 
     useEffect(() => {
         if (isFinish && typeof window !== 'undefined') {
-            window.alert(`Game Finished! steps: ${step}`);
+            setTimeout(() => {
+                window.alert(`Game Finished! steps: ${step}`);
+            }, 1000);
         }
     }, [isFinish])
 
